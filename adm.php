@@ -8,13 +8,9 @@
 </head>
 <body>
 	<div>
-	    <h1>ADMIN</h1>
-
-	    <?php
-			VerificaMSG();
-			ExibirUsuario();
-			VerificarEnvio();
-	    ?>
+		<h1>ADMIN</h1>
+		<a href="index.php">voltar a index</br></a>
+		<a href="edicaoUsuario.php">Ir a pagina de edição de usuarios</br></a>
 	</div>
 </body>
 </html>

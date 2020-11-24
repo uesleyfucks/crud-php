@@ -1,14 +1,16 @@
 <?php 
 include_once 'conn.php';
 
+//--FUNCOES CADASTRO E LOGIN--
+//Verifica envio dos dados de cadastro
 function VerificarEnvio()
 {
-
 	if (isset($_POST['cadastro'])) 
 	{
 		ValidarCampos();
 	}
 }
+//Valida os campos do Login
 function ValidarCampos() 
 {
 	$username  = $_POST['username'];
@@ -32,32 +34,34 @@ function ValidarCampos()
 		echo"Erro em algum dos campos!!!";
 	}
 }
+//Cadastra usuarios no banco de dados
 function CadastrarUsuario($user)
 {
-		//contacatenação dos valores pra colocar na tabela
-		$valores = "'".$user['username']."', 
-		           '".$user['email']."', 
-		           '".$user['senha']."' ";
+	//contacatenação dos valores pra colocar na tabela
+	$valores = "'".$user['username']."', 
+	           '".$user['email']."', 
+	           '".$user['senha']."' ";
 
-		//tornar acesso da '$CONN' global
-		global $conn;
+	//tornar acesso da '$CONN' global
+	global $conn;
 
-		//criar o comando DML
-		$sql = "INSERT INTO users_tb (username, email, senha) VALUES ($valores)";
+	//criar o comando DML
+	$sql = "INSERT INTO users_tb (username, email, senha) VALUES ($valores)";
 		
 		
-		//executar comando sql
-		$result = mysqli_query($conn, $sql);
+	//executar comando sql
+	$result = mysqli_query($conn, $sql);
 
-		//verificar se o usuario foi cadastrado no banco de dados
-		if (mysqli_affected_rows($conn) > 0) 
-		{
-			echo '<h3>Usuario cadastrado com sucesso!</h3>';
-		}
-		else
-		{
-			echo '<h3>Atenção: ERRO AO CADASTRAR USUARIO!!!!</h3>';
-		}							   	
+	//verificar se o usuario foi cadastrado no banco de dados
+	if (mysqli_affected_rows($conn) > 0) 
+	{
+		echo '<h3>Usuario cadastrado com sucesso!</h3>';
+		echo '<a href="index.php">voltar a index</br></a>';
+	}
+	else
+	{
+		echo '<h3>Atenção: ERRO AO CADASTRAR USUARIO!!!!</h3>';
+	}							   	
 }
 //Exibir Usuarios 
 function ExibirUsuario()
@@ -79,9 +83,9 @@ function ExibirUsuario()
 		echo '<table class="tabela-usuario">';
 		echo '<th>ID</th>';
 		echo '<th>Nome de Usuario</th>';
-		echo '<th>Email </th>';
 		echo '<th>Senha </th>';
-		echo'<th colspan="2">Ações</th>';
+		echo '<th>Email </th>';
+		echo'<th>Ações</th>';
 		echo '</tr>';
 		//ENQUANTO houverem registros na tabela transforme em um array associativo
 		while ($registro = mysqli_fetch_assoc($result)) 
@@ -99,15 +103,12 @@ function ExibirUsuario()
 
 			//monstar links para editar e deletar
 			echo '<td>';
-				echo '<a href="deletarUsuario.php?id='.$id.'">Deletar</a> | ';
-			echo '</td>';
-			echo '<td>';
-				echo '<a href="editarUsuario.php?id='.$id.'">Editar</a>';
+				echo '<a href="deletarUsuario.php?id='.$id.'">Deletar</a>';
 			echo '</td>';
 			echo'</tr>';	
 		}
 		echo '</table>';
-			echo '</p>';
+		echo '</p>';
 	}
 	//SE não tiver cadastro
 	else
@@ -127,7 +128,6 @@ function DeletarUsuario($id)
 
 	if(mysqli_affected_rows($conn) > 0)
 	{
-		//redirecionar usuario para pagina album.php
 		header('location:cadastro.php?msg=delok');
 	}
 	else
@@ -143,7 +143,7 @@ function VerificaMSG()
 		$msg = $_GET['msg'];
 		if($msg == "delok")
 		{
-			echo '<h3>Usuario deletado com sucesso!!!</h3>';
+			echo '<h3>Usuario deletado com sucesso!!!, clique <a href="adm.php">aqui</a> para voltar </h3>';
 		}
 		else if ($msg == "delerror")
 		{

@@ -232,11 +232,28 @@ form.sign-up-form{
 
 /* Tabelas */
 
-table.tabela-usuario{
+.tabela-usuario{
     width: 100%;
-    background-color: #d31f07;
+    border-collapse: collapse;
+    
 }
 
+.tabela-usuario td, .tabela-usuario th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+ .tabela-usuario tr:nth-child(even){background-color: #f2f2f2;}
+
+ .tabela-usuario tr:hover {background-color: #ddd;}
+
+ .tabela-usuario th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0E6655;
+    color: white;
+  }
 /* Animação */
 
 .container.sign-up-mode:before{

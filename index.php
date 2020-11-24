@@ -63,7 +63,7 @@
                     </div>
                     <input type="submit" name="cadastro" value="Registrar-se" class="btn solid">
 
-                    <p class="social-text">Ou faça login atravez de</p>
+                    <p class="social-text">Ou faça cadastro atravez de</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
@@ -88,7 +88,7 @@
             <div class="panel left-panel">
                 <div class="content">
                     <h3>Novo aqui?</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, deserunt. Id, corporis?</p>
+                    <p>chega mais ( ͡° ͜ʖ ͡°) </p>
                     <button class="btn transparent" id="sign-up-btn">Criar conta</button>
 
                     <img src="images/register.svg" class="image" alt="">
@@ -98,7 +98,7 @@
             <div class="panel right-panel">
                     <div class="content">
                         <h3>Ja tem conta?</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse vero ea omnis?</p>
+                        <p>vamos lá!!!</p>
                         <button class="btn transparent" id="sign-in-btn">Entrar</button>
     
                         <img src="images/log.svg" class="image" alt="">

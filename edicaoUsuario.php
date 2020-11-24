@@ -4,15 +4,18 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<title>Cadastro</title>
+	<title>Pagina Principal</title>
 </head>
 <body>
-	<div id="formulario">
-		<h1>Cadastro</h1>
-		<?php
+	<div>
+		<h1>ADMIN</h1>
+		<a href="adm.php">voltar</br></a>
+
+	    <?php
 			VerificaMSG();
-			VerificarEnvio(); //funcao verificar envio de arquivo
-		?>
+			ExibirUsuario();
+			VerificarEnvio();
+	    ?>
 	</div>
 </body>
 </html>
