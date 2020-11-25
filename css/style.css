@@ -76,8 +76,9 @@ form.sign-up-form{
 
 .titulo{
     font-size: 2.2rem;
-    color: #444;
+    color: #fff;
     margin-bottom: 10px;
+    text-shadow: 2px 4px 0px black;
 }
 
 .input-field{
@@ -121,7 +122,7 @@ form.sign-up-form{
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #0E6655;
+    background-color: #1e021e;
     color: #fff;
     text-transform: capitalize;
     font-weight: 600;
@@ -130,12 +131,14 @@ form.sign-up-form{
 }
 
 .btn:hover{
-    background-color: #16A085;
+    background-color: #861b86;
 }
 
 .social-text{
     padding: .7rem 0;
     font-size: 1rem;
+    color:#fff;
+    text-shadow: 1px 2px 0px black;
 }
 
 .social-media{
@@ -146,20 +149,20 @@ form.sign-up-form{
 .social-icon{
     height: 46px;
     width: 46px;
-    border: 1px solid #333;
+    border: 1px solid #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #333;
+    color: #f0f0f0;
     font-size: 1.1rem;
     border-radius: 50%;
     transition: .3s;
 }
 
 .social-icon:hover{
-    color: #16A085;
-    border-color:  #16A085;
+    color: #861b86;
+    border-color:  #861b86;
 }
 
 .panels-container{
@@ -219,7 +222,7 @@ form.sign-up-form{
 }
 
 .btn.transparent:hover{
-    background: #1dbd9d;
+    background: #9d3a6c;
 }
 
 .image{

@@ -8,8 +8,8 @@
 </head>
 <body>
 	<div>
-	    <h1>AAAAAAAAAAAAAAAAAAA</h1>
-
+		<div>
+		</div>
 	    <?php
 
 	    ?>

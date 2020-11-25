@@ -37,7 +37,7 @@
 		}
 		else
 		{
-			header('location:principal.php');
+			header('location:cartas.php');
 		}
 		
 	}
