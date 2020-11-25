@@ -22,16 +22,15 @@ function ValidarCampos()
 	$user['username'] = $username;
 	//Verifica se o campo email tem os padroes.
 	filter_var($email, FILTER_VALIDATE_EMAIL) ? $user['email'] = $email : $erro = 2;
-
 	//Verifica se o campo senha tem os padroes.
 	$user['senha'] = $senha;
-
+	
 	if(!empty($user['username']) && !empty($user['email']) && !empty($user['senha']))
 	{
 		CadastrarUsuario($user);
 	}
 	else{
-		echo"Erro em algum dos campos!!!";
+		header('location:cadastro.php?msg=cadastroerror');
 	}
 }
 //Cadastra usuarios no banco de dados
@@ -55,12 +54,12 @@ function CadastrarUsuario($user)
 	//verificar se o usuario foi cadastrado no banco de dados
 	if (mysqli_affected_rows($conn) > 0) 
 	{
-		echo '<h3>Usuario cadastrado com sucesso!</h3>';
-		echo '<a href="index.php">voltar a index</br></a>';
+		header('location:cadastro.php?msg=cadastro_ok');
 	}
 	else
 	{
 		echo '<h3>Atenção: ERRO AO CADASTRAR USUARIO!!!!</h3>';
+		echo '<a href="index.php">voltar</br></a>';
 	}							   	
 }
 //Exibir Usuarios 
@@ -143,7 +142,8 @@ function VerificaMSG()
 		$msg = $_GET['msg'];
 		if($msg == "delok")
 		{
-			echo '<h3>Usuario deletado com sucesso!!!, clique <a href="adm.php">aqui</a> para voltar </h3>';
+			echo '<h3>Usuario deletado com sucesso!!!</br>';
+			echo '<a href="edicaoUsuario.php">Voltar</a></br></h3>';
 		}
 		else if ($msg == "delerror")
 		{
@@ -153,21 +153,15 @@ function VerificaMSG()
 		{
 			echo'<h3>Não foi possivel realizar a ação solicitada. ID inválido.</h3>';
 		}
-		else if ($msg == "edtok")
+		else if ($msg =="cadastro_ok")
 		{
-			echo'<h3>Album editado com sucesso!!!</h3>';
+			echo '<h3>Usuario cadastrado com sucesso!</br></h3>';
+			echo '<a href="index.php">voltar</br></a>';
 		}
-		else if ($msg == "edterror")
+		else if ($msg == "cadastroerror")
 		{
-			echo'<h3>Não foi possivel editar usuario solicitado. Por favor tentar novamente.</h3>';
-		}
-		else if ($msg == "noedt")
-		{
-			echo'<h3>Favor clicar em "Editar" para realizar alterações no usuario selecionado</h3>';
-		}
-		else if ($msg == "emptyedt")
-		{
-			echo'<h3>Atenção formulario de edição não pode conter campos em branco!!!</h3>';
+			echo'<h3>Erro ao cadastrar usuario. Por favor insira um email válido.</br></h3>';
+			echo'<a href="index.php">voltar</br></a>';
 		}
 	}
 }

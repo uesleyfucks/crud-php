@@ -13,7 +13,7 @@
 </head>
 <body>
     <!--aqui verifica se não apareceu nenhuma mensagem de erro-->
-    <div class="container">
+    <div class="container" style="background-image: url('images/background-index.png')";>
         <div class="forms-container">
             <!--Login e Cadastro-->
             <div class="signin-signup">
@@ -91,7 +91,7 @@
                     <p>chega mais ( ͡° ͜ʖ ͡°) </p>
                     <button class="btn transparent" id="sign-up-btn">Criar conta</button>
 
-                    <img src="images/register.svg" class="image" alt="">
+                    <img src="images/" class="image" alt="">
                 </div>
             </div>
             <!--Bloco de cadastro-->
@@ -101,7 +101,7 @@
                         <p>vamos lá!!!</p>
                         <button class="btn transparent" id="sign-in-btn">Entrar</button>
     
-                        <img src="images/log.svg" class="image" alt="">
+                        <img src="images/" class="image" alt="">
             </div>
         </div>
     </div>

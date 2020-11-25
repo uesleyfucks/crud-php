@@ -16,6 +16,7 @@ body, input{
     min-height: 100vh;
     background-color: #fff;
     overflow: hidden;
+    background-size: cover;
 }
 
 .container::before{
@@ -23,13 +24,13 @@ body, input{
     position: absolute;
     width: 2000px;
     height: 2000px;
-    border-radius: 50%;
-    background: linear-gradient(-45deg, #0E6251, #d31f07);
-    top: -10%;
-    right: 48%;
-    transform: translateY(-50%);
+    border-radius: 0%;
+    background: linear-gradient(-90deg, #173487,  #464b73);
+    top: 35%;
+    right: 50%;
+    transform: translateY(-40%);
     z-index: 6;
-    transition: 1.8s ease-in-out;
+    transition: 1.4s ease-in-out;
 }
 
 .forms-container{
@@ -49,7 +50,7 @@ body, input{
     display: grid;
     grid-template-columns: 1fr;
     z-index: 5;
-    transition: 1s .7s ease-in-out;
+    transition: 1.7s ease-in-out;
 }
 
 form{
@@ -165,8 +166,8 @@ form.sign-up-form{
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: -5%;
+    left: -10%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -222,7 +223,7 @@ form.sign-up-form{
 }
 
 .image{
-    width: 100%;
+    width: 75%;
     transition: 1.1s .4s ease-in-out;
 }
 
@@ -258,7 +259,7 @@ form.sign-up-form{
 
 .container.sign-up-mode:before{
     transform: translate(100%, -50%);
-    right: 52%;
+    right: 54%;
 }
 
 .container.sign-up-mode .left-panel .image,
