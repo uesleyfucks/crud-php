@@ -21,7 +21,7 @@
                 <form action="validacao.php" method="post" class="sign-in-form">
                     <h2 class="titulo">Entrar</h2>
                     <div class="input-field">
-                        <i class="fas fa-user"></i>
+                        <i class="fa fa-user"></i>
                         <input type="text" name="username" placeholder="Nome de usuario" required>
                     </div>
                     <div class="input-field">

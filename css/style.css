@@ -296,3 +296,61 @@ form.sign-up-form{
     z-index: 2;
     opacity: 1;
 }
+
+/*Pagina de Cartas */
+
+.container-cartas{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.forms-cartas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.input-field-cartas{
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    padding: 0 .4rem;
+    display: grid;
+    grid-template-columns: 15% 85%; 
+}
+
+.input-field-cartas input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Menu */
+
+.menu {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu li a {
+    text-decoration: none;
+    padding: 5px;
+}
