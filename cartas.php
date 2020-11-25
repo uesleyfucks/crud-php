@@ -12,7 +12,7 @@
 <body>
 	<div class="container-cartas">
 		<div class="forms-cartas">
-			<form>
+			<form action="colecao.php" method="post">
 				<h2 class="titulo">Cartas</h2>
 				<?php include 'menu.php'?>
 				<div class="input-field-cartas">
@@ -21,11 +21,11 @@
 				</div>
 				<div class="input-field-cartas">
 					<i class="fas fa-user"></i>
-					<select name="cardtipo" id="cardTipo" onchange="myFunction(this)">
+					<select name="tipo" id="tipo" onchange="myFunction(this)">
 						<option value="0" selected disabled>--TIPO--</option>
-						<option value="1">Monstro</option>
-						<option value="2">Mágica</option>
-						<option value="3">Armadilha</option>
+						<option value="Monstro">Monstro</option>
+						<option value="Magica">Mágica</option>
+						<option value="Armadilha">Armadilha</option>
 					</select>
 				</div>
 				<div class="input-field-cartas" id="atk" style="display: none;">
@@ -39,7 +39,7 @@
 				<div class="descricao">
 					<textarea name="descricao" rows="5" cols="50" placeholder="Descrição/Efeito"></textarea>
 				</div>
-				<input type="submit" value="Adicionar" class="btn solid">
+				<input type="submit" name="carta" value="Adicionar" class="btn solid">
 			</form>
 		</div>
 	</div>

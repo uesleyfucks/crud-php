@@ -134,6 +134,120 @@ function DeletarUsuario($id)
 		header('location:cadastro.php?msg=delerror');
 	}
 }
+//--FUNCOES CARTAS--
+//Verifica Envio de Carta
+function VerificarEnvioCarta()
+{
+	if (isset($_POST['carta'])) 
+	{
+		ValidarCamposCarta();
+	}
+}
+//Valida Envio da Carta
+function ValidarCamposCarta()
+{
+	$cardname = $_POST['cardname'];
+	$tipo = $_POST['tipo'];
+	$ataque = $_POST['ataque'];
+	$defesa = $_POST['defesa'];
+	$descricao = $_POST['descricao'];
+
+
+	$carta['cardname'] = $cardname;
+	$carta['tipo'] = $tipo;
+	$carta['ataque'] = $ataque;
+	$carta['defesa'] = $defesa;
+	$carta['descricao'] = $descricao;
+
+	CadastrarCarta($carta);
+}
+//Cadastrar Carta
+function CadastrarCarta($carta)
+{
+	$valores = "'".$carta['cardname']."', 
+	           '".$carta['tipo']."', 
+			   '".$carta['ataque']."',
+			   '".$carta['defesa']."',
+			   '".$carta['descricao']."' ";
+
+	global $conn;
+	$sql = "INSERT INTO cartas_tb (cardname, tipo, ataque, defesa, descricao) VALUES ($valores)";
+	$result = mysqli_query($conn, $sql);
+
+	if (mysqli_affected_rows($conn) > 0) 
+	{
+		header('location:cartas.php?msg=carta_ok');
+	}
+	else
+	{
+		echo '<h3>Atenção: ERRO AO CADASTRAR CARTA!!!!</h3>';
+		echo '<a href="cartas.php">voltar</br></a>';
+	}	
+}
+//Exibir Carta
+function ExibirCarta()
+{
+	global $conn;
+	$sql = "SELECT * FROM cartas_tb";
+	$result = mysqli_query($conn, $sql);
+
+	if(mysqli_affected_rows($conn) > 0)
+	{
+		echo '<h3>Coleção de Cartas:</h3>';
+		echo '<p>';
+		echo '<table class="">';
+		echo '<th>ID</th>';
+		echo '<th>Nome da Carta</th>';
+		echo '<th>Tipo</th>';
+		echo '<th>Ataque</th>';
+		echo'<th>Defesa</th>';
+		echo'<th>Descrição/Efeito</th>';
+		echo '</tr>';
+		
+		while ($registro = mysqli_fetch_assoc($result)) 
+		{
+			echo'<tr>';
+			foreach($registro as $indice => $valor)
+			{
+				if ($indice == "id")
+				{
+					$id = $valor; //copiando o id atual para a variavel id
+				}
+				echo'<td>'. $valor . '</td>';
+			}
+			//monstar links para editar e deletar
+			echo '<td>';
+				echo '<a href="deletarCarta.php?id='.$id.'">Deletar</a>';
+			echo '</td>';
+			echo '<td>';
+				echo '<a href="editarCarta.php?id='.$id.'">Editar</a>';
+			echo '</td>';
+			echo'</tr>';	
+		}
+		echo '</table>';
+		echo '</p>';
+	}
+	//SE não tiver cadastro
+	else
+	{
+		echo'<h3>Não há cartas na coleção ainda =/. Utilize o formulário para realizar um cadastro.</h3>';
+	}
+}
+//Deletar Usuarios
+function DeletarCarta($id)
+{
+	global $conn;
+	$sql = "DELETE FROM cartas_tb WHERE id = $id";
+	$result = mysqli_query($conn, $sql);
+	if(mysqli_affected_rows($conn) > 0)
+	{
+		header('location:colecao.php?msg=delok');
+	}
+	else
+	{
+		header('location:colecao.php?msg=delerror');
+	}
+}
 //FUNCAO DE MENSAGENS
 function VerificaMSG()
 {
