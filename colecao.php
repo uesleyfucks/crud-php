@@ -7,13 +7,15 @@
 	<title>Cadastro</title>
 </head>
 <body>
-	<div id="formulario">
-		<h1>Coleção</h1>
-		<?php
-			VerificaMSG();
-            VerificarEnvioCarta(); //funcao verificar envio de arquivo
-            ExibirCarta();
-		?>
-	</div>
+	<div class="colecao">
+		<div class="colecContent">
+			<h2 class="titulo">Coleção de Cartas</h2>
+			<?php
+				include 'menu.php';
+				VerificaMSG();
+            	VerificarEnvioCarta(); //funcao verificar envio de arquivo
+            	ExibirCarta();
+			?>
+		</div>
 </body>
 </html>

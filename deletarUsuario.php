@@ -7,6 +7,6 @@
  }
 else
 {
-	header('location:adm.php?msg=noid');
+	header('location:edicaoUsuario.php?msg=noid');
 }
 ?>

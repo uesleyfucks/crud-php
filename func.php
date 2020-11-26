@@ -193,15 +193,15 @@ function ExibirCarta()
 
 	if(mysqli_affected_rows($conn) > 0)
 	{
-		echo '<h3>Coleção de Cartas:</h3>';
 		echo '<p>';
-		echo '<table class="">';
+		echo '<table class="tabela-colecao">';
 		echo '<th>ID</th>';
 		echo '<th>Nome da Carta</th>';
 		echo '<th>Tipo</th>';
 		echo '<th>Ataque</th>';
 		echo'<th>Defesa</th>';
 		echo'<th>Descrição/Efeito</th>';
+		echo'<th colspan="2">Ações</th>';
 		echo '</tr>';
 		
 		while ($registro = mysqli_fetch_assoc($result)) 

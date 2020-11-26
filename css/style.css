@@ -238,26 +238,26 @@ form.sign-up-form{
 
 .tabela-usuario{
     width: 100%;
-    border-collapse: collapse;
-    
+    border-collapse: collapse;  
 }
 
 .tabela-usuario td, .tabela-usuario th {
     border: 1px solid #ddd;
     padding: 8px;
-  }
+}
 
- .tabela-usuario tr:nth-child(even){background-color: #f2f2f2;}
+.tabela-usuario tr:nth-child(even){background-color: #f2f2f2;}
 
- .tabela-usuario tr:hover {background-color: #ddd;}
+.tabela-usuario tr:hover {background-color: #ddd;}
 
- .tabela-usuario th {
+.tabela-usuario th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #0E6655;
     color: white;
-  }
+}
+
 /* Animação */
 
 .container.sign-up-mode:before{
@@ -312,17 +312,17 @@ form.sign-up-form{
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: 15%;
     left: 0;
 }
 
 .input-field-cartas{
     max-width: 380px;
     width: 100%;
-    height: 55px;
+    height: 45px;
     background-color: #f0f0f0;
     margin: 10px 0;
-    border-radius: 55px;
+    border-radius: 35px;
     padding: 0 .4rem;
     display: grid;
     grid-template-columns: 15% 85%; 
@@ -338,19 +338,98 @@ form.sign-up-form{
     color: #333;
 }
 
+.input-field-cartas select{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.descricao textarea{
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 35px;
+    padding: 0 .4rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+    line-height: 1;
+    margin: 10px 0;
+    background-color: #f0f0f0;
+}
+
 /* Menu */
 
-.menu {
-    padding: 0px;
+.menu{
+    padding: 25px 80px;
     margin: 0px;
+    list-style: none;
+    position: fixed;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    background-color: #1e021e;
+}
+
+.menu ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li{
+    position: relative;
     list-style: none;
 }
 
-.menu li {
-    display: inline;
+.menu a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
 }
 
-.menu li a {
-    text-decoration: none;
-    padding: 5px;
+/*Pagina Colecao*/
+.colecao{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #acacac;
 }
+
+.colecContent{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+/*Tabela Colecao*/
+.tabela-colecao{
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    background-color: #acacac;
+}
+
+.tabela-colecao td, .tabela-colecao th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+ .tabela-colecao th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #ff9933;
+    color: white;
+  }

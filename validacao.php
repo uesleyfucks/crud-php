@@ -33,7 +33,7 @@
 		//caso for ADM ira mandar para a pagina adm.php
 		if(($username == 'admin') && $senha == 'admin')
 		{
-			header('location:adm.php');
+			header('location:edicaoUsuario.php');
 		}
 		else
 		{
