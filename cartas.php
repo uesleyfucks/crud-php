@@ -4,11 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/icones.css">
 	<title>Pagina Principal</title>
-	<script
-        src="https://kit.fontawesome.com/64d58efce2.js"
-        crossorigin="anonymous"
-    ></script>
 </head>
 <body>
 	<div class="container-cartas" style="background-image: url('images/cartas.jpg')";>
@@ -21,7 +18,7 @@
 					<input type="text" name="cardname" placeholder="Nome da Carta" required>
 				</div>
 				<div class="input-field-cartas">
-					<i class="fas fa-user"></i>
+					<i class="fas fa-ankh"></i>
 					<select name="tipo" id="tipo" onchange="myFunction(this)" required>
 						<option value="" selected disabled>--TIPO--</option>
 						<option value="Monstro">Monstro</option>
@@ -30,11 +27,11 @@
 					</select>
 				</div>
 				<div class="input-field-cartas" id="atk" style="display: none;">
-					<i class="fas fa-user"></i>
+					<i class="fas fa-sword"></i>
 					<input type=" number" name="ataque" placeholder="ATK">
 				</div>
 				<div class="input-field-cartas" id="def" style="display: none;">
-					<i class="fas fa-user"></i>
+					<i class="fas fa-shield"></i>
 					<input type=" number" name="defesa" placeholder="DEF">
 				</div>
 				<div class="descricao">
