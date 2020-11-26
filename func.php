@@ -248,6 +248,42 @@ function DeletarCarta($id)
 		header('location:colecao.php?msg=delerror');
 	}
 }
+//função para verificar se o id fornecido para edição é valido
+function CartaEdt($id)
+{
+	global $conn;
+	$sql = "SELECT * FROM cartas_tb WHERE id = $id";
+	$result = mysqli_query($conn, $sql);
+	if(mysqli_affected_rows($conn) > 0)
+	{
+		$carta = mysqli_fetch_assoc($result);
+		return $carta;
+	}
+	return null;
+}
+//função para editar a carta
+function EditarCarta($carta)
+{
+	global $conn;
+
+	$fields = "cardname = '" .$carta['cardname'] ."', 
+			   tipo =     '" .$carta['tipo']     ."',
+			   ataque =   '" .$carta['ataque']   ."',
+			   defesa =   '" .$carta['defesa']   ."',
+			   descricao = '".$carta['descricao']."'";
+			  
+	$where = "id = ".$carta['id'];
+	$sql = "UPDATE cartas_tb SET $fields WHERE $where";
+	$result = mysqli_query($conn, $sql);
+	if(mysqli_affected_rows($conn) > 0)
+	{
+		header('location:colecao.php?msg=edtok');
+	}
+	else
+	{
+		header('location:colecao.php?msg=edterror');
+	}
+}
 //FUNCAO DE MENSAGENS
 function VerificaMSG()
 {

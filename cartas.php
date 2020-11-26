@@ -30,11 +30,11 @@
 				</div>
 				<div class="input-field-cartas" id="atk" style="display: none;">
 					<i class="fas fa-user"></i>
-					<input type=" number" name="ataque" placeholder="ATK" required>
+					<input type=" number" name="ataque" placeholder="ATK">
 				</div>
 				<div class="input-field-cartas" id="def" style="display: none;">
 					<i class="fas fa-user"></i>
-					<input type=" number" name="defesa" placeholder="DEF" required>
+					<input type=" number" name="defesa" placeholder="DEF">
 				</div>
 				<div class="descricao">
 					<textarea name="descricao" rows="5" cols="50" placeholder="Descrição/Efeito"></textarea>
