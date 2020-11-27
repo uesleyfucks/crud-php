@@ -5,10 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <script
-        src="https://kit.fontawesome.com/64d58efce2.js"
-        crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" type="text/css" href="css/icones.css">
 	<title>Editar Cartas</title>
 </head>
 <body>
@@ -22,7 +19,7 @@
 	if ($carta != null):
 	?>
 
-    <div class="container-cartas">
+    <div class="container-cartas" style="background-image: url('images/cartas_2.jpg')";>
 		<div class="forms-cartas">
 			<form action="cartaEditada.php" method="post">
 				<h2 class="titulo">Editar Carta</h2>
@@ -32,7 +29,7 @@
 					<input type="text" name="cardname" value="<?php echo $carta['cardname']; ?>">
 				</div>
 				<div class="input-field-cartas">
-					<i class="fas fa-user"></i>
+					<i class="fas fa-ankh"></i>
 					<select name="tipo" id="tipo" onchange="myFunction(this)" value="<?php echo $carta['tipo']; ?>">
 						<option value="Monstro">Monstro</option>
 						<option value="Magica">Mágica</option>
@@ -40,11 +37,11 @@
 					</select>
 				</div>
 				<div class="input-field-cartas" id="atk" style="display: grid;">
-					<i class="fas fa-user"></i>
+					<i class="fas fa-sword"></i>
 					<input type=" number" name="ataque" value="<?php echo $carta['ataque']; ?>">
 				</div>
 				<div class="input-field-cartas" id="def" style="display: grid;">
-					<i class="fas fa-user"></i>
+					<i class="fas fa-shield"></i>
 					<input type=" number" name="defesa" value="<?php echo $carta['defesa']; ?>">
 				</div>
 				<div class="descricao">

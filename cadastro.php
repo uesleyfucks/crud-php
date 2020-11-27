@@ -7,8 +7,7 @@
 	<title>Cadastro</title>
 </head>
 <body>
-	<div id="formulario">
-		<h1>Cadastro</h1>
+	<div>
 		<?php
 			VerificaMSG();
 			VerificarEnvio(); //funcao verificar envio de arquivo

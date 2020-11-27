@@ -258,6 +258,26 @@ form.sign-up-form{
     color: white;
 }
 
+/*Icones Editar/Deletar */
+.table-icon{
+    height: 46px;
+    width: 46px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.table-icon:hover{
+    color: #ff9933;
+    border-color:  #ff9933;
+}
+
 /* Animação */
 
 .container.sign-up-mode:before{
@@ -369,6 +389,10 @@ form.sign-up-form{
     font-size: 1.1rem;
 }
 
+.msg{
+    color: #fff;
+}
+
 /* Menu */
 
 .menu{
@@ -425,8 +449,8 @@ form.sign-up-form{
 .tabela-colecao{
     width: 100%;
     border-collapse: collapse;
-    color: white;
-    background-color: #acacac;
+    color: black;
+    background-color: white;
 }
 
 .tabela-colecao td, .tabela-colecao th {

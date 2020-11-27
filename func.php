@@ -102,7 +102,7 @@ function ExibirUsuario()
 
 			//monstar links para editar e deletar
 			echo '<td>';
-				echo '<a href="deletarUsuario.php?id='.$id.'">Deletar</a>';
+				echo '<a class="table-icon" href="deletarUsuario.php?id='. $id.'"> <i class="far fa-trash"></i> </a>';
 			echo '</td>';
 			echo'</tr>';	
 		}
@@ -127,11 +127,11 @@ function DeletarUsuario($id)
 
 	if(mysqli_affected_rows($conn) > 0)
 	{
-		header('location:cadastro.php?msg=delok');
+		header('location:edicaoUsuario.php?msg=delok');
 	}
 	else
 	{
-		header('location:cadastro.php?msg=delerror');
+		header('location:edicaoUsuario.php?msg=delerror');
 	}
 }
 //--FUNCOES CARTAS--
@@ -217,10 +217,10 @@ function ExibirCarta()
 			}
 			//monstar links para editar e deletar
 			echo '<td>';
-				echo '<a href="deletarCarta.php?id='.$id.'">Deletar</a>';
+				echo '<a class="table-icon" href="deletarCarta.php?id='. $id.'"> <i class="far fa-trash"></i> </a>';
 			echo '</td>';
 			echo '<td>';
-				echo '<a href="editarCarta.php?id='.$id.'">Editar</a>';
+				echo '<a class="table-icon" href="editarCarta.php?id='. $id.'"> <i class="far fa-edit"></i> </a>';
 			echo '</td>';
 			echo'</tr>';	
 		}
@@ -241,11 +241,11 @@ function DeletarCarta($id)
 	$result = mysqli_query($conn, $sql);
 	if(mysqli_affected_rows($conn) > 0)
 	{
-		header('location:colecao.php?msg=delok');
+		header('location:colecao.php?msg=cartaDelOk');
 	}
 	else
 	{
-		header('location:colecao.php?msg=delerror');
+		header('location:colecao.php?msg=cartaDelError');
 	}
 }
 //função para verificar se o id fornecido para edição é valido
@@ -293,7 +293,6 @@ function VerificaMSG()
 		if($msg == "delok")
 		{
 			echo '<h3>Usuario deletado com sucesso!!!</br>';
-			echo '<a href="edicaoUsuario.php">Voltar</a></br></h3>';
 		}
 		else if ($msg == "delerror")
 		{
@@ -312,6 +311,26 @@ function VerificaMSG()
 		{
 			echo'<h3>Erro ao cadastrar usuario. Por favor insira um email válido.</br></h3>';
 			echo'<a href="index.php">voltar</br></a>';
+		}
+		else if ($msg == "edtok")
+		{
+			echo'<h3>Carta editada com sucesso!!!</h3>';
+		}
+		else if ($msg == "edterror")
+		{
+			echo'<h3>Erro ao editar carta.</h3>';
+		}
+		else if ($msg == "cartaDelOk")
+		{
+			echo'<h3>Carta deletada com sucesso!!!</h3>';
+		}
+		else if ($msg == "cartaDelError")
+		{
+			echo'<h3>Erro ao deletar carta.</h3>';
+		}
+		else if ($msg == "carta_ok")
+		{
+			echo'<h3 class="msg">Carta adicionada à coleção!</h3>';
 		}
 	}
 }
