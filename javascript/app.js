@@ -11,7 +11,7 @@ sign_in_btn.addEventListener('click', () => {
 });
 
 //
-function myFunction(that) {
+function camposAtkDef(that) {
     if (that.value == "Monstro") {
     document.getElementById("atk").style.display = "grid";
     document.getElementById("def").style.display = "grid";

@@ -22,7 +22,7 @@ include 'func.php';
 				</div>
 				<div class="input-field-cartas">
 					<i class="fas fa-ankh"></i>
-					<select name="tipo" id="tipo" onchange="myFunction(this)" required>
+					<select name="tipo" id="tipo" onchange="camposAtkDef(this)" required>
 						<option value="" selected disabled>--Tipo de Carta--</option>
 						<option value="Monstro">Monstro</option>
 						<option value="Magica">Mágica</option>

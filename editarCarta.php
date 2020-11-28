@@ -30,7 +30,7 @@
 				</div>
 				<div class="input-field-cartas">
 					<i class="fas fa-ankh"></i>
-					<select name="tipo" id="tipo" onchange="myFunction(this)" value="<?php echo $carta['tipo']; ?>">
+					<select name="tipo" id="tipo" onchange="camposAtkDef(this)" value="<?php echo $carta['tipo']; ?>">
 						<option value="Monstro">Monstro</option>
 						<option value="Magica">Mágica</option>
 						<option value="Armadilha">Armadilha</option>
